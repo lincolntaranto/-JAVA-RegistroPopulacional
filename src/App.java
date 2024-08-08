@@ -24,16 +24,15 @@ public class App {
     
                 
                 System.out.println("Digite o seu primeiro nome:");
-                usuario.primeiroNome = input.nextLine();
+                usuario.setPrimeiroNome(input.nextLine());
                 System.out.println("Digite o seu segundo nome:");
-                usuario.segundoNome = input.nextLine();
+                usuario.setSegundoNome(input.nextLine());
                 System.out.println("Digite a sua idade:");
-                usuario.idade = input.nextInt();
-                input.nextLine();
+                usuario.setIdade(Integer.parseInt(input.nextLine()));
                 System.out.println("Digite o seu endereço:");
-                usuario.endereco = input.nextLine();
+                usuario.setEndereco(input.nextLine());
     
-                System.out.println("Olá " + usuario.primeiroNome + " " + usuario.segundoNome + ", sua idade é: " + usuario.idade + ", e seu endereço é: " + usuario.endereco + "?");
+                System.out.println("Olá " + usuario.getPrimeiroNome() + " " + usuario.getSegundoNome() + ", sua idade é: " + usuario.getIdade() + ", e seu endereço é: " + usuario.getEndereco() + "?");
                 System.out.println("Esta correto? (s/n)");
     
                 if(input.nextLine().equalsIgnoreCase("s")){
@@ -41,7 +40,7 @@ public class App {
                     try(PrintWriter gravador = new PrintWriter(new FileWriter(caminhoArquivo, true))) {
 
                     //Grava os dados no arquivo.
-                    gravador.println("Nome: " + usuario.primeiroNome + " Sobrenome: " + usuario.segundoNome + ", Idade: " + usuario.idade + ", Endereço: " + usuario.endereco);
+                    gravador.println("Nome: " + usuario.getPrimeiroNome() + " Sobrenome: " + usuario.getSegundoNome() + ", Idade: " + usuario.getIdade() + ", Endereço: " + usuario.getEndereco());
                     gravador.close(); //Fecha o gravador para que os dados sejam gravados imediatamente assim ficando disponiveis para a consulta
 
                     System.out.println("Deseja registrar outro usuário? (s/n)");
