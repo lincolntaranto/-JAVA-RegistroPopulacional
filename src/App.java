@@ -19,8 +19,11 @@ public class App {
             System.out.println("REGISTRO POPULACIONAL");
             System.out.println("1- Para Registrar");
             System.out.println("2- Para Consultar");
+            System.out.println("3- Para Sair");
+
+            String escolha = input.nextLine();
     
-            if (input.nextLine().equalsIgnoreCase("1")) {
+            if (escolha.equalsIgnoreCase("1")) {
     
                 
                 System.out.println("Digite o seu primeiro nome:");
@@ -54,7 +57,7 @@ public class App {
                     }
                 }
                 
-            } else {
+            } else if (escolha.equalsIgnoreCase("2")) {
     
                 try(BufferedReader leitor = new BufferedReader(new FileReader(caminhoArquivo))){
     
@@ -71,6 +74,8 @@ public class App {
                     System.out.println("Erro na leitura do arquivo: " + e.getMessage());
                 }
     
+            } else {
+                loop = false; //Encerra o loop
             }
 
         }
